@@ -12,7 +12,8 @@
 
 <div align="center">
   
-[<img src="https://raw.githubusercontent.com/markovuser/Clock-Widget/main/assets/download.png" width="250" alt="Download" title="Installer">](https://github.com/markovuser/Clock-Widget/releases/latest/download/Clock-Widget-setup.exe)
+[<img src="https://raw.githubusercontent.com/markovuser/Clock-Widget/main/assets/download.png" width="250" alt="Download" title="Installer">](https://github.com/markovuser/Clock-Widget/releases/latest/download/Clock-Widget-setup.exe)<br>
+[<img src="https://raw.githubusercontent.com/markovuser/Clock-Widget/main/assets/Portable.png" width="250" alt="Download" title="Portable">](https://github.com/markovuser/Clock-Widget/releases/latest/download/Clock.Widget.zip)
 
 </div>
 <div align="center">
