@@ -811,7 +811,7 @@ begin
       Ini.WriteBool('Option', Form2.CheckBoxShowSign.Name, Form2.CheckBoxShowSign.Checked);
       Ini.WriteBool('Option', Form2.CheckBoxShowSeconds.Name, Form2.CheckBoxShowSeconds.Checked);
       Ini.WriteBool('Option', Form2.CheckBoxAutoColor.Name, Form2.CheckBoxAutoColor.Checked);
-
+      Ini.WriteBool('Option', Form2.CheckBoxShowFrame.Name, Form2.CheckBoxShowFrame.Checked);
     end;
 
     Ini.WriteInteger('Option', 'Top', Top);
@@ -898,8 +898,9 @@ end;
 
 procedure TForm1.PopupMenu1Popup(Sender: TObject);
 begin
-  SetWindowPos(Handle, HWND_BOTTOM, 0, 0, 0, 0, SWP_NOACTIVATE or SWP_NOMOVE or SWP_NOSIZE or SWP_NOREDRAW);
-  ShowWindow(Application.Handle, SW_HIDE);
+ // SetWindowPos(Handle, HWND_BOTTOM, 0, 0, 0, 0, SWP_NOACTIVATE or SWP_NOMOVE or SWP_NOSIZE or SWP_NOREDRAW);
+  SetWindowPos(Form1.Handle, HWND_BOTTOM, 0, 0, 0, 0, SWP_NOACTIVATE or SWP_NOMOVE or SWP_NOSIZE or SWP_NOREDRAW or SWP_NOOWNERZORDER);
+  //ShowWindow(Application.Handle, SW_HIDE);
 end;
 
 procedure TForm1.UnCheckTheme;
@@ -1174,8 +1175,9 @@ begin
   UpdateWindowSize;
 
   // Устанавливаем окно вниз Z-порядка и скрываем хэндл приложения
-  SetWindowPos(Handle, HWND_BOTTOM, 0, 0, 0, 0, SWP_NOACTIVATE or SWP_NOMOVE or SWP_NOSIZE or SWP_NOREDRAW);
-  ShowWindow(Application.Handle, SW_HIDE);
+  //SetWindowPos(Handle, HWND_BOTTOM, 0, 0, 0, 0, SWP_NOACTIVATE or SWP_NOMOVE or SWP_NOSIZE or SWP_NOREDRAW or SWP_NOOWNERZORDER);
+  SetWindowPos(Handle, HWND_BOTTOM, 0, 0, 0, 0, SWP_NOACTIVATE or SWP_NOMOVE or SWP_NOSIZE or SWP_NOREDRAW or SWP_NOOWNERZORDER);
+  //ShowWindow(Application.Handle, SW_HIDE);
   if Form2.RadioButtonCenterTop.Checked then
   begin
     Form1.Left := (Screen.Width - Form1.Width - 20) div 2;

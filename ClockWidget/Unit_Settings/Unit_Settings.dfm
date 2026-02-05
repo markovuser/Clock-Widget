@@ -18,6 +18,7 @@ object Form2: TForm2
   Font.Style = []
   Position = poDesktopCenter
   RoundedCorners = rcOn
+  OnClose = FormClose
   OnCreate = FormCreate
   OnMouseWheel = FormMouseWheel
   TextHeight = 15
@@ -171,6 +172,16 @@ object Form2: TForm2
         Caption = #1048#1075#1085#1086#1088#1080#1088#1086#1074#1072#1090#1100' '#1084#1099#1096#1100
         TabOrder = 4
         OnClick = CheckBoxIgnoreMouseClick
+      end
+      object CheckBoxShowFrame: TCheckBox
+        Left = 6
+        Top = 59
+        Width = 150
+        Height = 17
+        Cursor = crHandPoint
+        Caption = #1055#1086#1082#1072#1079#1072#1090#1100' '#1088#1072#1084#1082#1091' (W11)'
+        TabOrder = 5
+        OnClick = CheckBoxShowFrameClick
       end
     end
     object GroupBox3: TGroupBox

@@ -23,6 +23,7 @@ object Form1: TForm1
   Position = poDesigned
   PrintScale = poPrintToFit
   RoundedCorners = rcOn
+  ScreenSnap = True
   StyleElements = [seFont, seBorder]
   OnClose = FormClose
   OnCreate = FormCreate

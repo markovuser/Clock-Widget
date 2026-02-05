@@ -22,11 +22,11 @@
     <Transaction>1899.12.30 00:00:00.000.485,=D:\Delphi Programs\Clock Widget\Units\FileInfoUtils\FileInfoUtils.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.618,D:\Delphi Programs\Clock Widget\ClockWidget\Unit3.pas=D:\Delphi Programs\Clock Widget\ClockWidget\Unit_AppContainer.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.364,D:\Delphi Programs\Information in Desktop\Units\lng\Internationalization.pas=</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.800,=D:\Delphi Programs\Information in Desktop\Units\adCpuUsage\adCpuUsage.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.456,=D:\Delphi Programs\Information in Desktop\Units\adCpuUsage\adCpuUsage.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.216,D:\Delphi Programs\Information in Desktop\Units\adCpuUsage\adCpuUsage.pas=</Transaction>
     <Transaction>1899.12.30 00:00:00.000.602,=D:\Delphi Programs\Information in Desktop\Units\CPUUsageMonitor\CPUUsageMonitor.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.234,D:\Delphi Programs\Clock on Desctop\ClockonDesctop.dproj=D:\Delphi Programs\Clock on Desctop\InformationInDesktop.dproj</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.216,D:\Delphi Programs\Information in Desktop\Units\adCpuUsage\adCpuUsage.pas=</Transaction>
     <Transaction>1899.12.30 00:00:00.000.989,D:\Delphi Programs\Information in Desktop\Units\adCpuUsage\adCpuUsage.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.800,=D:\Delphi Programs\Information in Desktop\Units\adCpuUsage\adCpuUsage.pas</Transaction>
   </Transactions>
 </BorlandProject>

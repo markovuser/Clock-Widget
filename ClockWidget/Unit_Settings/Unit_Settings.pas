@@ -43,6 +43,7 @@ type
     CheckBoxAutoColor: TCheckBox;
     CheckBoxIgnoreMouse: TCheckBox;
     RadioButtonRightTop: TRadioButton;
+    CheckBoxShowFrame: TCheckBox;
     procedure FormCreate(Sender: TObject);
     procedure ButtonSaveClick(Sender: TObject);
     procedure RadioButtonLastPositionClick(Sender: TObject);
@@ -68,6 +69,8 @@ type
     function IsMouseIgnored: Boolean;
     procedure CheckBoxIgnoreMouseClick(Sender: TObject);
     procedure RadioButtonRightTopClick(Sender: TObject);
+    procedure CheckBoxShowFrameClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
     FCurrentScale: Integer;
@@ -91,8 +94,8 @@ uses
 
 procedure TForm2.CreateParams(var Params: TCreateParams);
 begin
-  Inherited CreateParams(Params);
-  Params.ExStyle := Params.ExStyle Or WS_EX_APPWINDOW;
+  inherited CreateParams(Params);
+  Params.ExStyle := Params.ExStyle or WS_EX_APPWINDOW;
   Params.WndParent := GetDesktopWindow;
 end;
 
@@ -168,6 +171,20 @@ begin
     // Обновляем курсор на главной форме
   if Assigned(Form1) then
     Form1.UpdateCursorForAllLabels;
+end;
+
+procedure TForm2.CheckBoxShowFrameClick(Sender: TObject);
+begin
+  if CheckBoxShowFrame.Checked then
+  begin
+    Form1.RoundedCorners := rcOn;
+  end;
+
+  if CheckBoxShowFrame.Checked = false then
+  begin
+    Form1.RoundedCorners := rcOff;
+  end;
+
 end;
 
 function TForm2.IsMouseIgnored: Boolean;
@@ -253,6 +270,9 @@ begin
   // Блокировка положения окна
   Form2.CheckBoxIgnoreMouse.Checked := Ini.ReadBool('Option', CheckBoxIgnoreMouse.Name, false);
   Form2.CheckBoxIgnoreMouseClick(Self);
+ //Рамка окна
+  Form2.CheckBoxShowFrame.Checked := Ini.ReadBool('Option', CheckBoxShowFrame.Name, false);
+  Form2.CheckBoxShowFrameClick(Self);
 
   Form2.CheckBoxZero.Checked := Ini.ReadBool('Option', CheckBoxZero.Name, false);
   Form2.CheckBoxShowSign.Checked := Ini.ReadBool('Option', CheckBoxShowSign.Name, false);
@@ -272,6 +292,15 @@ begin
   end;
 
   Ini.Free;
+end;
+
+procedure TForm2.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  if Assigned(Form1) then
+  begin
+    // Отправляем главную форму на задний план
+    SetWindowPos(Form1.Handle, HWND_BOTTOM, 0, 0, 0, 0, SWP_NOACTIVATE or SWP_NOMOVE or SWP_NOSIZE or SWP_NOREDRAW or SWP_NOOWNERZORDER);
+  end;
 end;
 
 procedure TForm2.FormCreate(Sender: TObject);
